@@ -32,8 +32,9 @@ type Pet struct {
 	Created time.Time `json:"created"`
 
 	// Signature is the RSA signature of the above information.  To compute this
-	// properly, set Signature = nil and sign the SHA256 hash of the JSON.  This
-	// prevents the saturation of the hex pet market with fakes.
+	// properly, set Signature = nil and sign the SHA256 hash of the JSON. This
+	// behaviour is implemented in Pet.HashedJSON. The signature prevents the
+	// saturation of the hex pet market with fakes.
 	Signature []byte `json:"signature,omitempty"`
 }
 
