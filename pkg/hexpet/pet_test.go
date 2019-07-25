@@ -23,7 +23,7 @@ func RSAKeyMust(key *rsa.PrivateKey, err error) *rsa.PrivateKey {
 
 func TestPetSigning(t *testing.T) {
 
-	pet, err := hexpet.GeneratePet(key)
+	pet, err := hexpet.Generate(key)
 	if err != nil {
 		t.Error("Failed to generate a pet")
 	}
@@ -51,7 +51,7 @@ func TestPetSigning(t *testing.T) {
 
 func ExampleGenerate() {
 	for i := 0; i < 10; i++ {
-		pet, err := hexpet.GeneratePet(key)
+		pet, err := hexpet.Generate(key)
 		if err != nil {
 			fmt.Println("Failed to generate pet:", err)
 			break

@@ -38,8 +38,8 @@ type Pet struct {
 	Signature []byte `json:"signature,omitempty"`
 }
 
-// GeneratePet generates a new random pet. The resulting pet will be signed.
-func GeneratePet(key *rsa.PrivateKey) (*Pet, error) {
+// Generate generates a new random pet. The resulting pet will be signed.
+func Generate(key *rsa.PrivateKey) (*Pet, error) {
 	p := Pet{
 		ID:      uint16(zipf.Uint64()),
 		Created: time.Now(),
